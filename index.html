@@ -35,7 +35,6 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
-  /* Animated background grid */
   .bg-grid {
     position: fixed;
     inset: 0;
@@ -46,7 +45,6 @@
     background-size: 56px 56px, 56px 56px;
     pointer-events: none;
   }
-  /* Floating gradient orbs */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -64,8 +62,6 @@
     33% { transform: translate(60px, -40px) scale(1.1); }
     66% { transform: translate(-40px, 60px) scale(0.95); }
   }
-
-  /* Navigation */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -107,15 +103,11 @@
   }
   .nav-links a:hover { color: var(--accent); }
   .nav-links a .num { color: var(--accent); margin-right: 6px; font-size: 12px; }
-
-  /* Container */
   .container {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 32px;
   }
-
-  /* Hero */
   section { padding: 70px 0; }
   .hero { display: flex; align-items: center; padding: 110px 0 50px; }
   .hero-greet {
@@ -167,8 +159,6 @@
   }
   .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); }
-
-  /* Buttons */
   .btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn {
     display: inline-flex;
@@ -195,8 +185,6 @@
     border-color: var(--border-bright);
   }
   .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-  /* Section heading */
   .section-title {
     display: flex;
     align-items: center;
@@ -219,8 +207,6 @@
     flex: 1;
     max-width: 300px;
   }
-
-  /* About */
   .about-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
@@ -246,8 +232,6 @@
   .about-card .key { color: var(--text-muted); }
   .about-card .val { color: var(--text); }
   .pulse { color: var(--accent-2); }
-
-  /* Skills */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -284,8 +268,6 @@
     transition: all 0.15s;
   }
   .tag:hover { color: var(--accent); border-color: var(--accent); background: rgba(124,140,255,0.06); }
-
-  /* Experience */
   .exp-card {
     background: var(--bg-2);
     border: 1px solid var(--border);
@@ -325,8 +307,6 @@
     left: 0;
     color: var(--accent);
   }
-
-  /* Projects */
   .projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -404,8 +384,6 @@
   }
   .project-links a:hover { color: var(--accent); border-color: var(--accent); }
   .project-links a svg { width: 14px; height: 14px; }
-
-  /* Publication / Education */
   .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -441,8 +419,6 @@
     font-family: var(--mono);
     margin-top: 12px;
   }
-
-  /* Contact */
   .contact-wrap {
     text-align: center;
     padding: 40px 0;
@@ -480,7 +456,6 @@
     transition: all 0.2s;
   }
   .icon-link:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
-
   footer {
     text-align: center;
     padding: 40px 32px;
@@ -489,8 +464,6 @@
     font-family: var(--mono);
     border-top: 1px solid var(--border);
   }
-
-  /* Code window decoration */
   .code-window {
     background: var(--bg-2);
     border: 1px solid var(--border);
@@ -520,8 +493,6 @@
   .fn { color: #50fa7b; }
   .var { color: #8be9fd; }
   .com { color: #6272a4; }
-
-  /* Stats row */
   .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -551,8 +522,6 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-
-  /* Available badge */
   .badge {
     display: inline-flex;
     align-items: center;
@@ -579,15 +548,9 @@
     70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
     100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
   }
-
-  /* Glow on hero name */
   .hero h1 { filter: drop-shadow(0 0 30px rgba(124,140,255,0.15)); }
-
-  /* Reveal animation */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* Responsive */
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .about-grid, .skills-grid, .projects, .two-col { grid-template-columns: 1fr; }
@@ -773,53 +736,84 @@
     </div>
   </section>
 
+  <!-- ── PROJECTS ── -->
   <section id="projects">
     <div class="container">
       <h2 class="section-title reveal"><span class="num">04.</span>Things I've built</h2>
       <div class="projects">
+
+        <!-- TaskFlow -->
         <div class="project-card reveal">
           <span class="project-num">01</span>
-          <div class="project-icon">⚙️</div>
-          <h3>Task &amp; Workflow Management Platform</h3>
-          <p>Full-stack application for team task tracking and workflow automation. Built modular REST APIs supporting CRUD and real-time updates, layered with role-based access control and JWT authentication. Architected the data layer with normalized PostgreSQL schemas and indexed hot query paths. Containerized with Docker and deployed on AWS for horizontal scaling.</p>
+          <div class="project-icon">📋</div>
+          <h3>TaskFlow — Real-Time Kanban App</h3>
+          <p>Full-stack project management app with live collaboration. Multiple users see task updates instantly via Socket.io WebSockets — no refresh needed. Features a 4-column Kanban board, JWT authentication built from scratch, priority levels, and project-based rooms so teams stay isolated.</p>
           <div class="project-tech">
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
-            <span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">REST</span>
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+            <span class="tag">Socket.io</span><span class="tag">JWT</span><span class="tag">Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rahulteggi/taskflow" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
 
+        <!-- ShopStack -->
         <div class="project-card reveal">
           <span class="project-num">02</span>
-          <div class="project-icon">🤖</div>
-          <h3>LLM-Powered AI Assistant Backend</h3>
-          <p>FastAPI service integrating GPT-based language models for text summarization and intelligent query handling. Built async preprocessing pipelines to clean and structure inputs before inference, request batching to minimize token costs, and structured logging + monitoring to evaluate inference latency and response quality in production.</p>
+          <div class="project-icon">🛍️</div>
+          <h3>ShopStack — E-Commerce Platform</h3>
+          <p>End-to-end e-commerce platform with product catalog, cart, checkout, and order tracking. Server-side price validation prevents tampering. Persistent localStorage cart survives refreshes. Admin panel for inventory management. Full order lifecycle: pending → processing → shipped → delivered.</p>
           <div class="project-tech">
-            <span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">OpenAI / GPT</span>
-            <span class="tag">Pandas</span><span class="tag">Async Processing</span>
+            <span class="tag">React</span><span class="tag">Context API</span><span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rahulteggi/shopstack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
 
+        <!-- DocMind -->
         <div class="project-card reveal">
           <span class="project-num">03</span>
-          <div class="project-icon">🔗</div>
-          <h3>URL Shortener &amp; Analytics Service</h3>
-          <p>High-throughput URL shortening service designed for low-latency redirects and click analytics. Built around a Redis-backed cache for hot links, a PostgreSQL store for persistence, and a clean REST API. Explores rate limiting, custom slug generation, and analytics aggregation patterns.</p>
+          <div class="project-icon">🧠</div>
+          <h3>DocMind — AI Document Chat (RAG)</h3>
+          <p>Upload any PDF and ask questions in natural language. Implements a full RAG pipeline: text chunking with overlap → OpenAI embeddings → cosine similarity search → GPT-4o-mini answer with page-level source citations. The same architecture powering enterprise tools like Notion AI and ChatPDF.</p>
           <div class="project-tech">
-            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Redis</span>
-            <span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+            <span class="tag">OpenAI</span><span class="tag">RAG</span><span class="tag">Embeddings</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rahulteggi/docmind" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
 
+        <!-- HireAI -->
         <div class="project-card reveal">
           <span class="project-num">04</span>
-          <div class="project-icon">🛒</div>
-          <h3>E-Commerce Backend Services</h3>
-          <p>Designed and shipped backend modules for order management, inventory synchronization, and pricing/promotion engines in production e-commerce systems at UST Global. Worked across checkout workflow automation, payment gateway integrations, and vendor data pipelines — handling high-volume transactional flows with reliability and consistency guarantees.</p>
+          <div class="project-icon">🤖</div>
+          <h3>HireAI — Job Application Assistant</h3>
+          <p>Paste a job description, upload your resume — HireAI runs 4 parallel OpenAI calls (Promise.all) to generate a tailored cover letter, score ATS keyword match, identify gaps, and rewrite resume bullets. Replaces tools like Jobscan. JSON mode ensures structured, parseable AI output every time.</p>
           <div class="project-tech">
-            <span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">REST APIs</span>
-            <span class="tag">Microservices</span><span class="tag">Payment APIs</span>
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">GPT-4o</span>
+            <span class="tag">Promise.all</span><span class="tag">JSON Mode</span><span class="tag">multer</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rahulteggi/hireai-job-assistant" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -882,13 +876,11 @@
   </section>
 
   <footer>
-    Designed &amp; built by Rahul Teggi · © <span id="year"></span>
+    Designed &amp; built by Rahul Teggi · &copy; <span id="year"></span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
