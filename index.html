@@ -10,13 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --moss: #2B2A07;
-    --moss-2: #353410;
+    --moss: #23260F;
+    --moss-2: #2E3216;
     --night: #0D0D0A;
     --cream: #F4F0E4;
     --cream-dim: #BDB89F;
     --rust: #C4561C;
-    --ochre: #D9A441;
+    --teal: #5CC2B5;
     --card: #FBF8F0;
     --ink: #1C1B12;
     --sans: 'Inter Tight', system-ui, sans-serif;
@@ -28,7 +28,7 @@
   html { scroll-behavior: smooth; }
   body { background: var(--moss); color: var(--cream); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
   a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
   .sr { position: absolute; left: -9999px; }
   .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
 
@@ -42,17 +42,15 @@
   .nav nav a { text-decoration: none; opacity: .85; }
   .nav nav a:hover { opacity: 1; }
   .cta { background: var(--cream); color: var(--night); padding: 16px 30px; text-decoration: none; font-weight: 500; font-size: 15px; display: inline-block; transition: background .2s; }
-  .cta:hover { background: var(--ochre); }
+  .cta:hover { background: var(--teal); }
 
   /* ---------- scenes (stand-in "photography") ---------- */
   .scene { position: relative; overflow: hidden; isolation: isolate; }
   .scene::after { content: ''; position: absolute; inset: 0; background-image: var(--grain); opacity: .35; mix-blend-mode: overlay; pointer-events: none; z-index: 3; }
   .s-rust  { background: radial-gradient(70% 90% at 78% 30%, #E07A2E 0%, #9C3A12 38%, #3A1607 75%, #1A0A03 100%); }
-  .s-olive { background: radial-gradient(80% 80% at 25% 20%, #9A9A3A 0%, #5B5A17 35%, #2A2906 75%, #141402 100%); }
-  .s-plum  { background: radial-gradient(70% 90% at 70% 70%, #B0587A 0%, #6A2445 40%, #2A0C1B 80%, #12050B 100%); }
+  .s-olive { background: radial-gradient(80% 80% at 25% 20%, #7E8A45 0%, #47511F 35%, #22270D 75%, #101306 100%); }
   .s-teal  { background: radial-gradient(75% 85% at 30% 75%, #3E9A93 0%, #1D5B57 40%, #0B2725 80%, #051211 100%); }
-  .s-ochre { background: radial-gradient(70% 90% at 60% 25%, #F0C66A 0%, #C08A2C 35%, #5C3A0C 75%, #241503 100%); }
-  .s-night { background: radial-gradient(60% 80% at 50% 0%, #4A4A25 0%, #1E1E0C 55%, #0D0D0A 100%); }
+  .s-night { background: radial-gradient(60% 80% at 50% 0%, #2F4A46 0%, #15201E 55%, #0B0F0E 100%); }
   .shape { position: absolute; border-radius: 50%; filter: blur(2px); z-index: 0; }
 
   /* ---------- hero ---------- */
@@ -100,7 +98,7 @@
   .checks li { display: flex; gap: 14px; align-items: flex-start; font-size: 16.5px; }
   .checks li::before { content: ''; flex: 0 0 20px; height: 20px; margin-top: 2px; border-radius: 50%; border: 1.5px solid var(--cream); background: no-repeat center/11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.2 3L11 1' fill='none' stroke='%23F4F0E4' stroke-width='1.8'/%3E%3C/svg%3E"); }
   .more { font-size: 15px; font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; }
-  .more:hover { color: var(--ochre); }
+  .more:hover { color: var(--teal); }
   .stack { margin-top: 26px; font-family: var(--mono); font-size: 12.5px; color: var(--cream-dim); }
   .frame { aspect-ratio: 4 / 3; border-radius: 6px; }
   .frame .float { position: absolute; }
@@ -157,7 +155,7 @@
   .av { width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 11px; font-weight: 600; color: #fff; margin-left: -8px; border: 2px solid var(--card); }
   .scan { left: 10%; top: 14%; width: 40%; aspect-ratio: 1; border-radius: 10px; background: radial-gradient(circle at 50% 45%, #9BA7A4 0%, #3F4A48 40%, #121716 75%); box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); }
   .scan::before { content: ''; position: absolute; left: 30%; top: 22%; width: 40%; height: 55%; border-radius: 45% 45% 40% 40%; border: 2px solid rgba(255,255,255,.35); }
-  .scan::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; top: 50%; background: rgba(217,164,65,.8); box-shadow: 0 0 12px rgba(217,164,65,.8); }
+  .scan::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; top: 50%; background: rgba(92,194,181,.85); box-shadow: 0 0 12px rgba(92,194,181,.85); }
   .verdict { right: 8%; top: 22%; width: 40%; padding: 18px; }
   .verdict .lbl { font-family: var(--mono); font-size: 10.5px; color: #6B6852; }
   .verdict b { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; margin: 4px 0 10px; }
@@ -172,36 +170,36 @@
   .ust h2 { font-weight: 400; font-size: clamp(42px, 5vw, 76px); line-height: 1; letter-spacing: -0.035em; }
   .ust h2 em { font-family: var(--serif); font-style: italic; }
   .ust .lead p { color: var(--cream-dim); font-size: 18px; max-width: 32em; }
-  .role { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 22px 0; border-top: 1px solid #3A392A; border-bottom: 1px solid #3A392A; margin-bottom: 60px; font-size: 16px; }
+  .role { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 22px 0; border-top: 1px solid #323B30; border-bottom: 1px solid #323B30; margin-bottom: 60px; font-size: 16px; }
   .role b { font-weight: 500; }
   .role span { color: var(--cream-dim); }
   .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .case { background: #17170F; border: 1px solid #2E2D1E; border-radius: 8px; padding: 34px; display: flex; flex-direction: column; }
+  .case { background: #141712; border: 1px solid #283026; border-radius: 8px; padding: 34px; display: flex; flex-direction: column; }
   .case h3 { font-weight: 500; font-size: 26px; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
   .case > p { color: var(--cream-dim); font-size: 15.5px; margin-bottom: 24px; }
-  .diagram { background: #0D0D0A; border: 1px solid #2E2D1E; border-radius: 6px; padding: 22px 18px; margin-bottom: 22px; font-family: var(--mono); font-size: 11.5px; }
+  .diagram { background: #0D0D0A; border: 1px solid #283026; border-radius: 6px; padding: 22px 18px; margin-bottom: 22px; font-family: var(--mono); font-size: 11.5px; }
   .flow { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: nowrap; }
-  .node { border: 1px solid #4A4935; border-radius: 5px; padding: 8px 10px; text-align: center; white-space: nowrap; background: #17170F; }
-  .node.hot { border-color: var(--ochre); color: var(--ochre); }
-  .arrow { flex: 1; min-width: 14px; height: 1px; background: #4A4935; position: relative; }
-  .arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: 3.5px solid transparent; border-left: 5px solid #4A4935; border-right: 0; }
+  .node { border: 1px solid #46523F; border-radius: 5px; padding: 8px 10px; text-align: center; white-space: nowrap; background: #141712; }
+  .node.hot { border-color: var(--teal); color: var(--teal); }
+  .arrow { flex: 1; min-width: 14px; height: 1px; background: #46523F; position: relative; }
+  .arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: 3.5px solid transparent; border-left: 5px solid #46523F; border-right: 0; }
   .diagram .cap { margin-top: 14px; color: #8C8870; font-size: 11px; }
-  .result { display: flex; align-items: baseline; gap: 14px; margin-top: auto; padding-top: 18px; border-top: 1px solid #2E2D1E; }
-  .result b { font-family: var(--serif); font-weight: 400; font-size: 46px; line-height: 1; color: var(--ochre); }
+  .result { display: flex; align-items: baseline; gap: 14px; margin-top: auto; padding-top: 18px; border-top: 1px solid #283026; }
+  .result b { font-family: var(--serif); font-weight: 400; font-size: 46px; line-height: 1; color: var(--teal); }
   .result span { color: var(--cream-dim); font-size: 14px; }
   .bars { display: grid; gap: 8px; }
   .bars .r { display: grid; grid-template-columns: 70px 1fr 64px; align-items: center; gap: 10px; }
-  .bars .track { height: 10px; background: #26251A; border-radius: 5px; overflow: hidden; }
-  .bars .track i { display: block; height: 100%; border-radius: 5px; background: #6F6D52; }
-  .bars .track i.after { background: var(--ochre); }
+  .bars .track { height: 10px; background: #222A22; border-radius: 5px; overflow: hidden; }
+  .bars .track i { display: block; height: 100%; border-radius: 5px; background: #5F6B58; }
+  .bars .track i.after { background: var(--teal); }
   .tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-  .tech span { font-family: var(--mono); font-size: 11.5px; border: 1px solid #3A392A; border-radius: 4px; padding: 3px 8px; color: var(--cream-dim); }
+  .tech span { font-family: var(--mono); font-size: 11.5px; border: 1px solid #323B30; border-radius: 4px; padding: 3px 8px; color: var(--cream-dim); }
 
   /* ---------- skills ---------- */
   .skills { padding: 130px 0 110px; }
   .skills h2 { font-weight: 400; font-size: clamp(36px, 4vw, 58px); letter-spacing: -0.03em; margin-bottom: 56px; }
-  .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #4A4826; }
-  .grid6 div { padding: 28px 30px 32px 0; border-bottom: 1px solid #4A4826; }
+  .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #3E4A2A; }
+  .grid6 div { padding: 28px 30px 32px 0; border-bottom: 1px solid #3E4A2A; }
   .grid6 h3 { font-weight: 500; font-size: 18px; margin-bottom: 10px; }
   .grid6 p { color: var(--cream-dim); font-size: 15.5px; }
   .edu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 90px; }
@@ -279,9 +277,9 @@
     <div class="shape" style="width:40vw;height:40vw;left:-12vw;bottom:-14vw;background:radial-gradient(circle,#2B2A0799,transparent 65%)"></div>
 
     <div class="float f1 chat-mini" aria-hidden="true">
-      <div class="who-q">Q: what does the contract say about refunds?</div>
-      <p>Refunds are allowed within 30 days of delivery.</p>
-      <div class="srcs"><span>p.4 · 0.91</span><span>p.7 · 0.84</span></div>
+      <div class="who-q">Q: What AI work has he shipped?</div>
+      <p>He built DocMind, a full RAG app with vector search and GPT-4o-mini answers.</p>
+      <div class="srcs"><span>Projects / DocMind</span><span>Skills / AI</span></div>
     </div>
     <div class="float f2 kpi" aria-hidden="true"><small>Response time</small><b>12s → 3s</b></div>
     <div class="float f3 kpi" aria-hidden="true"><small>Model accuracy</small><b>91.02%</b></div>
@@ -317,7 +315,7 @@
         <a class="more" href="#work">See how DocMind does it</a>
       </div>
       <div class="frame tall scene s-olive lift">
-        <div class="shape" style="width:60%;height:80%;right:-10%;top:-20%;background:radial-gradient(circle,#D9A44155,transparent 65%)"></div>
+        <div class="shape" style="width:60%;height:80%;right:-10%;top:-20%;background:radial-gradient(circle,#5CC2B544,transparent 65%)"></div>
         <div class="ask" role="region" aria-labelledby="ask-title">
           <div class="bar-top"><b id="ask-title">Ask my resume</b><span class="pill">live</span></div>
           <form id="ask-form">
@@ -376,8 +374,8 @@
         <a class="more" href="https://github.com/Rahulteggi/hireai-job-assistant" target="_blank" rel="noopener">View HireAI on GitHub</a>
         <div class="stack">React · Node.js · OpenAI GPT-4o · JSON Mode</div>
       </div>
-      <div class="frame scene s-plum lift" aria-hidden="true">
-        <div class="shape" style="width:70%;height:90%;right:-15%;top:-30%;background:radial-gradient(circle,#F0A3C055,transparent 65%)"></div>
+      <div class="frame scene s-rust lift" aria-hidden="true">
+        <div class="shape" style="width:70%;height:90%;right:-15%;top:-30%;background:radial-gradient(circle,#F29A4A44,transparent 65%)"></div>
         <div class="float resume">
           <h5>resume_v3.pdf</h5>
           <div class="line" style="width:90%"></div><div class="line add" style="width:76%"></div>
@@ -438,15 +436,15 @@
         <a class="more" href="https://github.com/Rahulteggi/taskflow" target="_blank" rel="noopener">View TaskFlow on GitHub</a>
         <div class="stack">React · Node.js · Express · MongoDB Atlas · Socket.io</div>
       </div>
-      <div class="frame scene s-ochre lift" aria-hidden="true">
-        <div class="shape" style="width:70%;height:90%;left:-20%;bottom:-30%;background:radial-gradient(circle,#2B2A0766,transparent 65%)"></div>
+      <div class="frame scene s-teal lift" aria-hidden="true">
+        <div class="shape" style="width:70%;height:90%;left:-20%;bottom:-30%;background:radial-gradient(circle,#7FD1C244,transparent 65%)"></div>
         <div class="float board">
           <div><h6>To do</h6><div class="t">Write API tests</div><div class="t">Design login page</div></div>
           <div><h6>In progress</h6><div class="t drag">Socket.io rooms</div><div class="t">JWT refresh</div></div>
           <div><h6>Done</h6><div class="t">Board schema</div><div class="t">Drag and drop</div></div>
         </div>
         <div class="float cursors">
-          <span><span class="av" style="background:#C4561C;margin-left:0">A</span><span class="av" style="background:#3E9A93">M</span><span class="av" style="background:#6A2445">J</span></span>
+          <span><span class="av" style="background:#C4561C;margin-left:0">A</span><span class="av" style="background:#3E9A93">M</span><span class="av" style="background:#23260F">J</span></span>
           editing now
         </div>
       </div>
